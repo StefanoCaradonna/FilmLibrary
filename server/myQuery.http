@@ -1,0 +1,56 @@
+### ALL FILMS
+GET http://localhost:3001/api/films HTTP/1.1
+
+### FAVORITE
+GET http://localhost:3001/api/filter/Favorites HTTP/1.1
+
+### BEST RATE
+GET http://localhost:3001/api/filter/Best%20Rates HTTP/1.1
+
+### SEEN LAST MONTH
+GET http://localhost:3001/api/filter/Seen%20Last%20Month HTTP/1.1
+
+### UNSEEN
+GET http://localhost:3001/api/filter/Unseen HTTP/1.1
+
+### FILM BY ID
+GET http://localhost:3001/api/films/1 HTTP/1.1
+
+### CREATE NEW FILM
+POST http://localhost:3001/api/films 
+Content-Type: application/json
+
+{
+    "title": "Interstellar",
+    "favorite": 1,
+    "watchdate": "2023-05-06",
+    "rating": 5,
+    "user": 1
+}
+
+### UPDATE NEW FILM
+PUT http://localhost:3001/api/films/14
+Content-Type: application/json
+
+{
+    "id": 14,
+    "title": "Interstellar",
+    "favorite": 1,
+    "watchdate": "2023-05-06",
+    "rating": 3,
+    "user": 1
+}
+
+### UPDATE RATE OF A SPECIFIC FILM
+POST http://localhost:3001/api/films/14/rating
+Content-Type: application/json
+
+{
+    "rating": 5
+}
+
+### TOGGLE FAVORITE FLAG OF A SPECIFIC FILM
+POST http://localhost:3001/api/films/13/toggleFavorite
+
+### DELETE FILM BY ID
+DELETE http://localhost:3001/api/films/14 HTTP/1.1
